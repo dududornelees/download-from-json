@@ -17,7 +17,7 @@ def baixar_imagem(endereco, url):
    if(resposta.status_code == requests.codes.OK):
       with open(novo_endereco, 'wb') as nova_imagem:
          nova_imagem.write(resposta.content)
-      print("Download finalizado, {}".format(endereco))
+      print("Download finalizado, {}".format(endereco.replace(" ", "-")))
    else:
       resposta.raise_for_status()
       print("Ocorreu um erro no download da imagem: {}".format(endereco))
